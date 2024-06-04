@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Summarizer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/cb81c28f0c.js" crossorigin="anonymous"></script>
+
+    <!-- Google font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu&display=swap"
+        rel="stylesheet">
+
+    <!-- jQuery for AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Bootstrap JS link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <section class="title">
+
+        <!--Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Text Summarizer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#cta">Try Now</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#pricing">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--Title-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Summarize Your Texts Instantly</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summarize Form Section -->
+    <section id="cta">
+        <div class="container">
+            <form id="summarize-form">
+                <div class="mb-3">
+                    <label for="rawText" class="form-label">Enter Text (Max 650 words)</label>
+                    <textarea class="form-control" id="rawText" rows="5" required></textarea>
+                    <div id="wordCount">Word Count: 0 / 650</div>
+                </div>
+                <div class="mb-3">
+                    <label for="summaryOption" class="form-label">Summary Length</label>
+                    <select class="form-select" id="summaryOption" required>
+                        <option value="detailed">Detailed</option>
+                        <option value="medium">Medium</option>
+                        <option value="brief">Brief</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-light" id="sum_btn">Summarize</button>
+            </form>
+            <div id="summaryResult" class="mt-3"></div>
+            <div id="summaryWordCount"></div>
+        </div>
+    </section>
+
+    <!-- Features and Benefits -->
+    <section id="features-benefits">
+        <h2 id="text">Why Use Our Text Summarizer?</h2>
+        <div class="row">
+            <div class="col-lg-4 feature-box">
+                <i class="icon fa-solid fa-lightbulb fa-4x"></i>
+                <h3>Save Time</h3>
+                <p>Quickly condense large texts into shorter summaries.</p>
+            </div>
+            <div class="col-lg-4 feature-box">
+                <i class="icon fa-solid fa-brain fa-4x"></i>
+                <h3>Enhance Understanding</h3>
+                <p>Grasp the main points of any text without missing essential information.</p>
+            </div>
+            <div class="col-lg-4 feature-box">
+                <i class="icon fa-solid fa-shield-alt fa-4x"></i>
+                <h3>Secure and Private</h3>
+                <p>Your texts are processed securely with the utmost privacy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h2>"The best text summarizer I've ever used. It saves me so much time!"</h2>
+                    <img class="testimonial-image" src="{{ url_for('static', filename='images/man-img.jpg') }}"
+                        alt="user-profile">
+                    <em>John Doe, New York</em>
+                </div>
+                <div class="carousel-item">
+                    <h2 class="testimonial-text">"A game-changer for my daily tasks. Highly recommend it."</h2>
+                    <img class="testimonial-image" src="{{ url_for('static', filename='images/lady-img.jpg') }}"
+                        alt="user-profile">
+                    <em>Jane Smith, Illinois</em>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <h2>A Plan for Every User's Needs</h2>
+        <p>Simple and affordable pricing plans.</p>
+        <div class="row">
+            <div class="pricing-column col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Basic</h3>
+                    </div>
+                    <div class="card-body">
+                        <h2>Free</h2>
+                        <p>5 Summaries per day</p>
+                        <p>Standard Speed</p>
+                        <p>Email Support</p>
+                        <button class="btn btn-lg btn-block btn-outline-dark" type="button">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-column col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Pro</h3>
+                    </div>
+                    <div class="card-body">
+                        <h2>$9.99/mo</h2>
+                        <p>Unlimited Summaries</p>
+                        <p>Priority Speed</p>
+                        <p>24/7 Support</p>
+                        <button class="btn btn-lg btn-block btn-dark" type="button">Get Started</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-column col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Enterprise</h3>
+                    </div>
+                    <div class="card-body">
+                        <h2>$29.99/mo</h2>
+                        <p>Unlimited Summaries</p>
+                        <p>Fastest Speed</p>
+                        <p>Dedicated Account Manager</p>
+                        <p>Custom Features</p>
+                        <button class="btn btn-lg btn-block btn-dark" type="button">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <a href="#" target="_blank" title="GitHub"><i class="footer-icon fa-brands fa-github"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="footer-icon fa-brands fa-linkedin"></i></a>
+        <a href="#" target="_blank" title="Twitter"><i class="footer-icon fa-brands fa-twitter"></i></a>
+
+        <p>© 2024 Text Summarizer</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            const maxWords = 650;
+
+            $('#rawText').on('input', function () {
+                let words = $(this).val().split(/\s+/).filter(function (word) {
+                    return word.length > 0;
+                });
+                let wordCount = words.length;
+
+                if (wordCount > maxWords) {
+                    $(this).val(words.slice(0, maxWords).join(" "));
+                    wordCount = maxWords;
+                }
+
+                $('#wordCount').text('Word Count: ' + wordCount + ' / ' + maxWords);
+            });
+            $('#summarize-form').on('submit', function (event) {
+                event.preventDefault();
+
+                let rawText = $('#rawText').val();
+                let summaryOption = $('#summaryOption').val();
+
+                if (rawText.split(/\s+/).filter(word => word.length > 0).length > maxWords) {
+                    alert("Text exceeds the maximum word limit of 650 words.");
+                    return;
+                }
+
+                $.ajax({
+                    url: '/summarize',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        raw_text: rawText,
+                        summary_option: summaryOption
+                    }),
+                    success: function (response) {
+                        $('#summaryResult').html('<h2>Summary:</h2><p>' + response.summary + '</p>');
+                        let summaryWords = response.summary.split(/\s+/).filter(function (word) {
+                            return word.length > 0;
+                        }).length;
+                        $('#summaryWordCount').text('Summary Word Count: ' + summaryWords);
+                    },
+                    error: function () {
+                        alert('Error occurred while summarizing the text.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

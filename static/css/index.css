@@ -1,0 +1,142 @@
+/* index.css */
+
+body {
+	font-family: "Montserrat", sans-serif;
+	color: #333;
+}
+
+.navbar {
+	background-color: #343a40;
+}
+
+.navbar-brand,
+.nav-link {
+	color: white !important;
+}
+
+.nav-link:hover {
+	color: #ddd !important;
+}
+.container {
+	padding: 30px;
+}
+.title {
+	background: linear-gradient(45deg, #343a40, #343a40);
+	color: white;
+	padding: 50px 0;
+	text-align: center;
+}
+
+#cta {
+	background-color: #343a40;
+	color: white;
+	padding: 50px 0;
+	text-align: center;
+}
+#text {
+	padding: 30px;
+	text-align: center;
+}
+#cta h1 {
+	font-size: 3rem;
+	margin-bottom: 20px;
+}
+
+#cta .btn-primary {
+	background-color: #343a40;
+	border-color: #343a40;
+}
+
+#cta .btn-primary:hover {
+	background-color: #23272b;
+	border-color: #23272b;
+}
+
+#wordCount {
+	color: #777;
+	margin-top: 5px;
+}
+
+#testimonials {
+	background-color: #343a40;
+	color: white;
+	padding: 50px 0;
+	text-align: center;
+}
+
+.carousel-inner {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.testimonial-image {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	margin: 20px 0;
+}
+
+.feature-box {
+	text-align: center;
+	padding: 20px;
+}
+
+.icon {
+	color: #343a40;
+	margin-bottom: 10px;
+}
+
+.icon:hover {
+	color: #343a40;
+}
+
+#pricing {
+	text-align: center;
+	padding: 50px 0;
+	background-color: #f7f7f7;
+}
+
+.pricing-column {
+	margin-bottom: 20px;
+}
+
+.pricing-column .card-header {
+	background-color: #343a40;
+	color: white;
+}
+
+.pricing-column .btn-outline-dark {
+	color: #343a40;
+	border-color: #343a40;
+}
+
+.pricing-column .btn-outline-dark:hover {
+	background-color: #343a40;
+	color: white;
+}
+
+.pricing-column .btn-dark {
+	background-color: #343a40;
+	border-color: #343a40;
+}
+
+.pricing-column .btn-dark:hover {
+	background-color: #343a40;
+	border-color: #343a40;
+}
+
+#footer {
+	background-color: #343a40;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.footer-icon {
+	margin: 0 10px;
+	color: white;
+}
+
+.footer-icon:hover {
+	color: #ddd;
+}
