@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Hugging Face API endpoint and API key
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer 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"}
 
 
 def query_huggingface_api(data, min_length, max_length):
